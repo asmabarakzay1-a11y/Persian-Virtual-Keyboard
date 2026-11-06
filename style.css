@@ -1,0 +1,401 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 10%, #242044, transparent 35%),
+        radial-gradient(circle at 90% 90%, #151f39, transparent 35%),
+        #090d19;
+}
+
+/* Main Container */
+
+.keyboard-container {
+    width: 100%;
+    max-width: 1050px;
+    padding: 32px;
+
+    background: #111827;
+    border: 1px solid #283149;
+    border-radius: 26px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(117, 94, 235, 0.06);
+}
+
+/* Header */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+    background: linear-gradient(135deg, #715cf5, #9b6bff);
+
+    color: white;
+    font-size: 27px;
+
+    box-shadow: 0 8px 25px rgba(113, 92, 245, 0.25);
+}
+
+.header h1 {
+    color: #f1f2ff;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.header p {
+    color: #8992aa;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.status {
+    margin-right: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: #102c29;
+    color: #43d6a0;
+
+    border: 1px solid #1e4940;
+    border-radius: 30px;
+
+    padding: 9px 14px;
+    font-size: 12px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #35d399;
+    box-shadow: 0 0 10px #35d399;
+}
+
+/* Input Area */
+
+.typing-area {
+    background: #171f30;
+    border: 1px solid #2a354d;
+    border-radius: 18px;
+
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.input-header,
+.input-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-header label {
+    color: #e4e7f5;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.input-header span {
+    color: #a99bff;
+    background: #292448;
+
+    padding: 5px 12px;
+    border-radius: 20px;
+
+    font-size: 11px;
+}
+
+.typing-area input {
+    width: 100%;
+    height: 65px;
+
+    margin: 12px 0;
+    padding: 0 18px;
+
+    border: 2px solid #303b54;
+    border-radius: 12px;
+
+    outline: none;
+    background: #0d1422;
+
+    color: #f5f3ff;
+    font-size: 19px;
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.typing-area input::placeholder {
+    color: #69748b;
+}
+
+.typing-area input:focus {
+    border-color: #806bff;
+    box-shadow: 0 0 0 4px rgba(128, 107, 255, 0.12);
+}
+
+.input-footer {
+    color: #78839a;
+    font-size: 11px;
+}
+
+/* Keyboard */
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.key-row {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.key {
+    min-width: 0;
+    height: 58px;
+
+    border: 1px solid #303b50;
+    border-radius: 12px;
+
+    background: linear-gradient(145deg, #202a3d, #182234);
+    color: #e0e5f5;
+
+    font-size: 19px;
+    font-family: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #0c1220;
+    transition: all 0.2s ease;
+}
+
+.key:hover {
+    background: #39305f;
+    color: #c5baff;
+
+    border-color: #806bff;
+
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 #111528;
+}
+
+.key:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* Numbers */
+
+.number {
+    background: #252d43;
+    color: #b9b2ff;
+}
+
+/* Backspace */
+
+.backspace {
+    background: #392b20;
+    color: #ffbd76;
+    border-color: #59412c;
+    font-size: 25px;
+}
+
+.backspace:hover {
+    background: #62401f;
+    color: #ffd09c;
+    border-color: #e99a48;
+}
+
+/* Clear */
+
+.clear {
+    background: #40252f;
+    color: #ff839b;
+    border-color: #653241;
+}
+
+.clear:hover {
+    background: #602d40;
+    color: #ffb2c1;
+    border-color: #ec6481;
+}
+
+/* Space */
+
+.space {
+    grid-column: span 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+    background: linear-gradient(135deg, #6654df, #9165f5);
+    border: none;
+
+    color: white;
+    box-shadow: 0 4px 0 #40339a;
+}
+
+.space span {
+    font-size: 15px;
+}
+
+.space small {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    opacity: 0.75;
+}
+
+.space:hover {
+    background: linear-gradient(135deg, #806cf5, #a17bff);
+    color: white;
+    box-shadow: 0 7px 0 #40339a;
+}
+
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: 1px solid #283149;
+
+    padding-top: 20px;
+    margin-top: 28px;
+
+    color: #707b91;
+    font-size: 11px;
+}
+
+/* Responsive */
+
+@media (max-width: 750px) {
+
+    .keyboard-container {
+        padding: 20px;
+    }
+
+    .key-row {
+        gap: 6px;
+    }
+
+    .key {
+        height: 49px;
+        font-size: 15px;
+        border-radius: 9px;
+    }
+
+    .header h1 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .keyboard-container {
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .key-row {
+        gap: 4px;
+    }
+
+    .key {
+        height: 42px;
+        font-size: 12px;
+        border-radius: 7px;
+    }
+
+    .backspace {
+        font-size: 19px;
+    }
+
+    .action {
+        font-size: 10px;
+    }
+
+    .header {
+        gap: 10px;
+    }
+
+    .logo {
+        width: 44px;
+        height: 44px;
+        font-size: 22px;
+    }
+
+    .header h1 {
+        font-size: 15px;
+    }
+
+    .header p {
+        font-size: 11px;
+    }
+
+    .status {
+        padding: 7px;
+        font-size: 9px;
+    }
+
+    .typing-area {
+        padding: 12px;
+    }
+
+    .typing-area input {
+        font-size: 15px;
+        height: 55px;
+    }
+
+    .space span {
+        font-size: 12px;
+    }
+
+    .space small {
+        font-size: 7px;
+    }
+
+    .footer {
+        font-size: 9px;
+    }
+}
